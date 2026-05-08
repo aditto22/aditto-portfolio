@@ -8,9 +8,7 @@
 :root{--bg:#0b0e14;--surface:#12161f;--card:#181d28;--accent:#e8c97a;--accent2:#5b8dee;--red:#e87a7a;--green:#7ae8a4;--text:#d8dde8;--muted:#6b7490;--border:rgba(232,201,122,0.13);--glow:rgba(232,201,122,0.07)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;font-weight:300;min-height:100vh;display:flex}
-
-/* LOGIN */
-.login-screen{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;min-height:100vh;gap:1.5rem;background:radial-gradient(ellipse at 50% 40%, rgba(232,201,122,.05), transparent 65%)}
+.login-screen{display:flex;flex-direction:column;justify-content:center;align-items:center;width:100%;min-height:100vh;gap:1.5rem;background:radial-gradient(ellipse at 50% 40%, rgba(232,201,122,.08),transparent)}
 .login-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2.5rem;width:100%;max-width:380px;text-align:center}
 .login-logo{font-family:'DM Serif Display',serif;font-size:1.5rem;color:var(--accent);margin-bottom:.3rem}
 .login-sub{font-size:.8rem;color:var(--muted);margin-bottom:2rem}
@@ -19,8 +17,6 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .login-card button{width:100%;margin-top:1rem;padding:.85rem;background:var(--accent);color:#0b0e14;font-weight:600;font-size:.9rem;border:none;border-radius:8px;cursor:pointer;transition:opacity .2s}
 .login-card button:hover{opacity:.88}
 .login-err{font-size:.8rem;color:var(--red);margin-top:.5rem;display:none}
-
-/* SIDEBAR */
 .sidebar{width:220px;min-height:100vh;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;flex-shrink:0;position:fixed;top:0;left:0;bottom:0;z-index:50}
 .sidebar-logo{padding:1.4rem 1.2rem;border-bottom:1px solid var(--border)}
 .sidebar-logo span{font-family:'DM Serif Display',serif;font-size:1rem;color:var(--accent);display:block}
@@ -35,8 +31,6 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .sidebar-footer a:hover{color:var(--accent)}
 .logout-btn{font-size:.78rem;color:var(--red);cursor:pointer;display:flex;align-items:center;gap:.5rem;margin-top:.5rem;transition:opacity .2s}
 .logout-btn:hover{opacity:.8}
-
-/* MAIN */
 .main{margin-left:220px;flex:1;min-height:100vh;display:flex;flex-direction:column}
 .topbar{padding:1rem 2rem;background:var(--surface);border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
 .topbar h1{font-family:'DM Serif Display',serif;font-size:1.3rem;color:#fff}
@@ -45,32 +39,24 @@ body{background:var(--bg);color:var(--text);font-family:'DM Sans',sans-serif;fon
 .btn-save:hover{opacity:.88;transform:translateY(-1px)}
 .btn-reset{padding:.6rem 1.2rem;background:transparent;color:var(--red);font-size:.82rem;border:1px solid rgba(232,122,122,.3);border-radius:6px;cursor:pointer;transition:all .3s}
 .btn-reset:hover{background:rgba(232,122,122,.08)}
-.btn-view{padding:.6rem 1.2rem;background:transparent;color:var(--accent2);font-size:.82rem;border:1px solid rgba(91,141,238,.3);border-radius:6px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:.4rem;transition:all .3s}
+.btn-view{padding:.6rem 1.2rem;background:transparent;color:var(--accent2);font-size:.82rem;border:1px solid rgba(91,141,238,.3);border-radius:6px;cursor:pointer;text-decoration:none;display:inline-block;transition:all .3s}
 .btn-view:hover{background:rgba(91,141,238,.08)}
-
-/* CONTENT */
 .content{flex:1;padding:2rem;overflow-y:auto}
 .panel{display:none}
 .panel.active{display:block}
-
-/* TOAST */
-.toast{position:fixed;bottom:2rem;right:2rem;padding:.8rem 1.5rem;background:var(--green);color:#0b0e14;font-weight:600;font-size:.85rem;border-radius:8px;z-index:999;transform:translateY(100px);opacity:0;transition:all .4s;pointer-events:none}
+.toast{position:fixed;bottom:2rem;right:2rem;padding:.8rem 1.5rem;background:var(--green);color:#0b0e14;font-weight:600;font-size:.85rem;border-radius:8px;z-index:999;transform:translateY(100px);opacity:0;transition:all .3s}
 .toast.show{transform:translateY(0);opacity:1}
 .toast.error{background:var(--red)}
-
-/* FORM ELEMENTS */
 .form-section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.5rem;margin-bottom:1.5rem}
 .form-section h3{font-size:.9rem;font-weight:600;color:#fff;margin-bottom:1.2rem;display:flex;align-items:center;gap:.5rem}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-group.full{grid-column:1/-1}
 label{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{width:100%;padding:.7rem .9rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'DM Sans',sans-serif;font-size:.88rem;outline:none;transition:border-color .3s;resize:vertical}
+input[type=text],input[type=email],input[type=tel],input[type=url],textarea,select{width:100%;padding:.7rem .9rem;background:var(--surface);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.85rem;outline:none;transition:border-color .3s}
 input:focus,textarea:focus,select:focus{border-color:var(--accent)}
 textarea{min-height:80px}
 select option{background:var(--card)}
-
-/* LIST ITEMS (experience, education, etc.) */
 .list-items{display:flex;flex-direction:column;gap:.8rem;margin-bottom:1rem}
 .list-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden}
 .list-item-header{display:flex;justify-content:space-between;align-items:center;padding:.7rem 1rem;cursor:pointer;transition:background .2s}
@@ -87,29 +73,24 @@ select option{background:var(--card)}
 .list-item-body.open{display:block}
 .btn-add{width:100%;padding:.65rem;border:1px dashed var(--border);border-radius:8px;background:transparent;color:var(--muted);font-size:.82rem;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:.4rem}
 .btn-add:hover{border-color:var(--accent);color:var(--accent)}
-
-/* SKILLS GRID EDITOR */
 .skills-editor{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.7rem;margin-bottom:1rem}
 .skill-edit-item{display:flex;align-items:center;gap:.5rem;padding:.6rem .8rem;background:var(--surface);border:1px solid var(--border);border-radius:8px}
 .skill-edit-item input.icon-input{width:38px;text-align:center;padding:.35rem}
 .skill-edit-item input.name-input{flex:1;padding:.35rem .5rem}
 .skill-edit-item .btn-icon.del{flex-shrink:0}
-
-/* PHOTO UPLOAD */
+.project-edit-item{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.project-edit-item.tech-row{grid-template-columns:1fr}
 .photo-upload{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
 .photo-preview{width:90px;height:110px;border-radius:50px;object-fit:cover;object-position:top;border:2px solid var(--border)}
 .photo-upload-zone{flex:1;min-width:200px}
-.upload-label{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;border:2px dashed var(--border);border-radius:10px;cursor:pointer;transition:border-color .3s;text-align:center;gap:.4rem}
+.upload-label{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:1.5rem;border:2px dashed var(--border);border-radius:10px;cursor:pointer;transition:border-color .3s}
 .upload-label:hover{border-color:var(--accent)}
 .upload-label span{font-size:.82rem;color:var(--muted)}
 .upload-label strong{font-size:.85rem;color:var(--accent)}
 input[type=file]{display:none}
-
-/* CHECKBOX */
 .checkbox-row{display:flex;align-items:center;gap:.6rem}
 .checkbox-row input[type=checkbox]{width:16px;height:16px;accent-color:var(--accent)}
 .checkbox-row label{text-transform:none;letter-spacing:0;font-size:.85rem;color:var(--text)}
-
 @media(max-width:700px){
   .sidebar{width:100%;min-height:auto;position:static;flex-direction:row;overflow-x:auto;border-right:none;border-bottom:1px solid var(--border)}
   .main{margin-left:0}
@@ -118,13 +99,13 @@ input[type=file]{display:none}
   .nav-item{border-left:none;border-bottom:3px solid transparent;padding:.5rem .8rem;white-space:nowrap}
   .nav-item.active{border-left-color:transparent;border-bottom-color:var(--accent)}
   .form-grid{grid-template-columns:1fr}
+  .project-edit-item{grid-template-columns:1fr}
   body{flex-direction:column}
 }
 </style>
 </head>
 <body>
 
-<!-- LOGIN -->
 <div class="login-screen" id="login-screen">
   <div class="login-card">
     <div class="login-logo">⚙ Portfolio Admin</div>
@@ -136,7 +117,6 @@ input[type=file]{display:none}
   </div>
 </div>
 
-<!-- ADMIN UI (hidden until login) -->
 <div id="admin-ui" style="display:none;width:100%;display:none;flex-direction:row">
 
 <div class="sidebar">
@@ -149,6 +129,7 @@ input[type=file]{display:none}
     <div class="nav-item" onclick="showPanel('photo')"><span class="ni">📷</span>Photo</div>
     <div class="nav-item" onclick="showPanel('experience')"><span class="ni">💼</span>Experience</div>
     <div class="nav-item" onclick="showPanel('skills')"><span class="ni">🔧</span>Skills</div>
+    <div class="nav-item" onclick="showPanel('projects')"><span class="ni">📁</span>Projects</div>
     <div class="nav-item" onclick="showPanel('education')"><span class="ni">🎓</span>Education</div>
     <div class="nav-item" onclick="showPanel('certifications')"><span class="ni">🏆</span>Certifications</div>
     <div class="nav-item" onclick="showPanel('volunteering')"><span class="ni">🤝</span>Volunteering</div>
@@ -171,7 +152,6 @@ input[type=file]{display:none}
   </div>
   <div class="content">
 
-    <!-- BASICS -->
     <div class="panel active" id="panel-basics">
       <div class="form-section">
         <h3>🪪 Personal Details</h3>
@@ -189,7 +169,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- PHOTO -->
     <div class="panel" id="panel-photo">
       <div class="form-section">
         <h3>📷 Profile Photo</h3>
@@ -208,7 +187,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- EXPERIENCE -->
     <div class="panel" id="panel-experience">
       <div class="form-section">
         <h3>💼 Work Experience</h3>
@@ -217,7 +195,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- SKILLS -->
     <div class="panel" id="panel-skills">
       <div class="form-section">
         <h3>🔧 Skills</h3>
@@ -226,7 +203,14 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- EDUCATION -->
+    <div class="panel" id="panel-projects">
+      <div class="form-section">
+        <h3>📁 Projects</h3>
+        <div class="list-items" id="proj-list"></div>
+        <button class="btn-add" onclick="addProj()">+ Add Project</button>
+      </div>
+    </div>
+
     <div class="panel" id="panel-education">
       <div class="form-section">
         <h3>🎓 Education</h3>
@@ -235,7 +219,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- CERTIFICATIONS -->
     <div class="panel" id="panel-certifications">
       <div class="form-section">
         <h3>🏆 Certifications &amp; Awards</h3>
@@ -244,7 +227,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- VOLUNTEERING -->
     <div class="panel" id="panel-volunteering">
       <div class="form-section">
         <h3>🤝 Volunteering</h3>
@@ -253,7 +235,6 @@ input[type=file]{display:none}
       </div>
     </div>
 
-    <!-- LANGUAGES -->
     <div class="panel" id="panel-languages">
       <div class="form-section">
         <h3>🌐 Languages</h3>
@@ -262,14 +243,13 @@ input[type=file]{display:none}
       </div>
     </div>
 
-  </div><!-- /content -->
-</div><!-- /main -->
-</div><!-- /admin-ui -->
+  </div>
+</div>
+</div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// ── AUTH ──
 var ADMIN_PASS = 'aditto2025';
 function doLogin(){
   var v=document.getElementById('pw-input').value;
@@ -290,18 +270,15 @@ if(sessionStorage.getItem('admin_auth')==='1'){
   document.getElementById('admin-ui').style.display='flex';
 }
 
-// ── DEFAULT DATA ──
-var DEFAULT={name:"Aditto Kumer Sutra Dhar",tagline:"Computer Science student specialising in Information Security — blending cybersecurity knowledge with hands-on sales & communication expertise.",presentAddress:"Johor, Malaysia",permanentAddress:"Chandpur, Bangladesh",email:"adittosutradhar22@gmail.com",phone:"(+60) 146393719",passport:"A13467558",dob:"17 Feb 2004",nationality:"Bangladeshi",photo:"",skills:[{icon:"🔐",name:"Cyber Security"},{icon:"🔑",name:"Cryptography"},{icon:"💻",name:"C Programming"},{icon:"🌐",name:"Computer Networking"},{icon:"🖥",name:"Computer Hardware"},{icon:"📊",name:"Microsoft Excel"},{icon:"🌐",name:"WordPress"},{icon:"📞",name:"Tele-Sales"},{icon:"🔄",name:"Multitasking"},{icon:"📈",name:"Agile PM"},{icon:"🤝",name:"Client Management"},{icon:"💡",name:"Problem Solving"}],education:[{degree:"Bachelor of Computer Science (Information Security) with Honours",school:"Universiti Tun Hussein Onn Malaysia (UTHM)",location:"Johor, Malaysia",period:"Currently Enrolled · 2nd Semester",field:"Information Security",grade:"In Progress",current:true},{degree:"Higher Secondary Certificate",school:"Vashantek Govt. College",location:"Dhaka, Bangladesh",period:"Mar 2022 – Nov 2023",field:"Science",grade:"GPA 4.50 / 5.00",current:false},{degree:"Secondary School Certificate",school:"Kurmitolla High School",location:"Dhaka, Bangladesh",period:"Jan 2019 – Nov 2021",field:"Science",grade:"GPA 4.67 / 5.00",current:false}],experience:[{role:"Sales Executive",company:"Offshore Staffing Solutions Ltd.",location:"Dhaka, Bangladesh",period:"Dec 2023 – Dec 2024",desc:"Built strong communication, negotiation, and client management skills as a Tele Sales Executive."}],certifications:[{name:"Build a Free Website with WordPress",org:"Coursera",date:"Sep 2024",link:"https://coursera.org/verify/WFKV5SQ47MCQ"},{name:"Introduction to Microsoft Excel",org:"Coursera",date:"Sep 2024",link:"https://coursera.org/verify/TM9NP190T4XE"},{name:"ChatGPT for Cybersecurity",org:"Simplilearn",date:"Jan 2025",link:""},{name:"Introduction to Cryptography for Beginners",org:"Simplilearn",date:"Jan 2025",link:""},{name:"International Workshop: Mainstreaming Gender Inclusivity and Embracing Digitalization",org:"UNESCO & UTHM · IBIS Hotel KLCC, Kuala Lumpur",date:"14–16 Oct 2024",link:""},{name:"District Level Science Fair",org:"Dhaka District",date:"Mar 2019",link:""},{name:"10th Bangladesh & 3rd Saanso Scout Jamboree",org:"Bangladesh Scout",date:"Mar 2019",link:""}],volunteering:[{title:"Blood Donation",location:"Dhaka, Bangladesh",period:"May 2022 – Present"},{title:"Area Cleaning Initiative",location:"Nikunja, Dhaka",period:"Nov 2024 – Present"}],languages:[{name:"Bengali",level:"Native"},{name:"English",level:"B2 — Independent"},{name:"Hindi",level:"Conversational"},{name:"Urdu",level:"Conversational"}]};
+var DEFAULT={name:"Aditto Kumer Sutra Dhar",tagline:"Computer Science student specialising in Information Security — blending cybersecurity knowledge with hands-on sales & communication expertise.",email:"aditto.ksd@gmail.com",phone:"+8801829383939",presentAddress:"Dhaka, Bangladesh",permanentAddress:"Sylhet, Bangladesh",passport:"",nationality:"Bangladeshi",dob:"17 Feb 2004",photo:"",experience:[{role:"Sales & Operations Associate",company:"Traction Club",location:"Dhaka, Bangladesh",period:"Feb 2024 – May 2024",desc:"Managed events, coordinated operations, and developed IT solutions supporting 10+ corporate events monthly."}],skills:[{icon:"🔐",name:"Cybersecurity"},{icon:"💻",name:"Python"},{icon:"🌐",name:"Web Dev"},{icon:"📊",name:"Data Analysis"},{icon:"🔧",name:"Linux"},{icon:"🎨",name:"UI/UX Design"}],projects:[{title:"Portfolio Website",description:"Dynamic portfolio with admin panel for easy content management.",tech:["HTML","CSS","JavaScript"],github:"#",live:"#"},{title:"Security Analytics Tool",description:"Real-time security vulnerability scanner and reporting system.",tech:["Python","Web Scraping","API"],github:"#",live:"#"}],education:[{degree:"B.Sc. in Computer Science",school:"Bangladesh University of Engineering & Technology (BUET)",location:"Dhaka",period:"2022 - Present",grade:"3.8/4.0",current:true},{degree:"High School",school:"Sylhet Cadet College",location:"Sylhet",period:"2017 - 2020",grade:"A+",current:false}],certifications:[{name:"Google Cybersecurity Professional Certificate",org:"Google",date:"2023",link:""},{name:"JavaScript Web Development",org:"freeCodeCamp",date:"2023",link:""}],volunteering:[{title:"Tech Mentor",location:"Code Club Bangladesh",period:"2023 - Present"},{title:"Community Contributor",location:"Open Source Projects",period:"2023 - Present"}],languages:[{name:"Bengali",level:"Native"},{name:"English",level:"Professional"}]};
 
-function loadData(){try{var s=localStorage.getItem('portfolio_data');return s?JSON.parse(s):JSON.parse(JSON.stringify(DEFAULT));}catch(e){return JSON.parse(JSON.stringify(DEFAULT));}}
+function loadData(){try{var s=localStorage.getItem('portfolio_data');var d=s?JSON.parse(s):JSON.parse(JSON.stringify(DEFAULT));if(!d.projects)d.projects=DEFAULT.projects;return d;}catch(e){return JSON.parse(JSON.stringify(DEFAULT));}}
 function saveData(d){localStorage.setItem('portfolio_data',JSON.stringify(d));}
 
-// ── TOAST ──
-function toast(msg,isErr){var t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(isErr?' error':'');setTimeout(function(){t.classList.add('show');},10);setTimeout(function(){t.classList.remove('show');},3000);}
+function toast(msg,isErr){var t=document.getElementById('toast');t.textContent=msg;t.className='toast'+(isErr?' error':'');setTimeout(function(){t.classList.add('show');},10);setTimeout(function(){t.classList.remove('show');},3500);}
 
-// ── PANELS ──
-var panels=['basics','photo','experience','skills','education','certifications','volunteering','languages'];
-var panelTitles={basics:'Basic Info',photo:'Profile Photo',experience:'Work Experience',skills:'Skills',education:'Education',certifications:'Certifications & Awards',volunteering:'Volunteering',languages:'Languages'};
+var panels=['basics','photo','experience','skills','projects','education','certifications','volunteering','languages'];
+var panelTitles={basics:'Basic Info',photo:'Profile Photo',experience:'Work Experience',skills:'Skills',projects:'Projects',education:'Education',certifications:'Certifications & Awards',volunteering:'Volunteering',languages:'Languages'};
 function showPanel(name){
   panels.forEach(function(p){
     document.getElementById('panel-'+p).classList.toggle('active',p===name);
@@ -310,7 +287,6 @@ function showPanel(name){
   document.getElementById('topbar-title').textContent=panelTitles[name]||name;
 }
 
-// ── INIT ──
 var DATA;
 function initAdmin(){
   DATA=loadData();
@@ -318,13 +294,13 @@ function initAdmin(){
   fillPhoto();
   renderExpList();
   renderSkillsEditor();
+  renderProjList();
   renderEduList();
   renderCertList();
   renderVolList();
   renderLangList();
 }
 
-// ── BASICS ──
 function fillBasics(){
   document.getElementById('b-name').value=DATA.name||'';
   document.getElementById('b-tagline').value=DATA.tagline||'';
@@ -348,7 +324,6 @@ function collectBasics(){
   DATA.dob=document.getElementById('b-dob').value.trim();
 }
 
-// ── PHOTO ──
 function fillPhoto(){
   if(DATA.photo&&DATA.photo.length>50)document.getElementById('photo-preview').src=DATA.photo;
 }
@@ -361,7 +336,6 @@ function handlePhotoUpload(input){
   r.readAsDataURL(file);
 }
 
-// ── GENERIC LIST HELPERS ──
 function makeListItem(id, titleHtml, subHtml, bodyHtml, onDel, onUp, onDn){
   var d=document.createElement('div');d.className='list-item';d.id='li-'+id;
   d.innerHTML='<div class="list-item-header" onclick="toggleItem(\''+id+'\')">'
@@ -376,7 +350,6 @@ function makeListItem(id, titleHtml, subHtml, bodyHtml, onDel, onUp, onDn){
 }
 function toggleItem(id){var b=document.getElementById('lib-'+id);b.classList.toggle('open');}
 
-// ── EXPERIENCE ──
 function renderExpList(){
   var c=document.getElementById('exp-list');c.innerHTML='';
   DATA.experience.forEach(function(e,i){
@@ -396,7 +369,6 @@ function addExp(){collectExp();DATA.experience.push({role:'New Role',company:'Co
 function delExp(i){if(!confirm('Delete this entry?'))return;collectExp();DATA.experience.splice(i,1);renderExpList();}
 function moveExp(i,d){collectExp();var a=DATA.experience.splice(i,1)[0];DATA.experience.splice(i+d,0,a);renderExpList();}
 
-// ── SKILLS ──
 function renderSkillsEditor(){
   var c=document.getElementById('skills-editor');c.innerHTML='';
   DATA.skills.forEach(function(s,i){
@@ -411,7 +383,26 @@ function collectSkills(){DATA.skills=DATA.skills.map(function(s,i){return{icon:d
 function addSkill(){collectSkills();DATA.skills.push({icon:'💡',name:'New Skill'});renderSkillsEditor();}
 function delSkill(i){collectSkills();DATA.skills.splice(i,1);renderSkillsEditor();}
 
-// ── EDUCATION ──
+function renderProjList(){
+  var c=document.getElementById('proj-list');c.innerHTML='';
+  DATA.projects.forEach(function(p,i){
+    var techStr=p.tech?p.tech.join(', '):'';
+    var body='<div class="form-grid">'
+      +'<div class="form-group full"><label>Project Title</label><input type="text" id="pj-title-'+i+'" value="'+esc(p.title||'')+'"></div>'
+      +'<div class="form-group full"><label>Description</label><textarea id="pj-desc-'+i+'" rows="3">'+esc(p.description||'')+'</textarea></div>'
+      +'<div class="form-group full"><label>Technologies (comma-separated)</label><input type="text" id="pj-tech-'+i+'" value="'+esc(techStr)+'" placeholder="HTML, CSS, JavaScript"></div>'
+      +'<div class="form-group"><label>GitHub Link</label><input type="url" id="pj-github-'+i+'" value="'+esc(p.github||'')+'"></div>'
+      +'<div class="form-group"><label>Live Demo Link</label><input type="url" id="pj-live-'+i+'" value="'+esc(p.live||'')+'"></div>'
+      +'</div>';
+    c.appendChild(makeListItem('proj'+i, esc(p.title||'Project'), (p.tech||[]).slice(0,2).join(', '), body,
+      'delProj('+i+')',i>0?'moveProj('+i+',-1)':'',i<DATA.projects.length-1?'moveProj('+i+',1)':''));
+  });
+}
+function collectProj(){DATA.projects.forEach(function(p,i){p.title=document.getElementById('pj-title-'+i).value;p.description=document.getElementById('pj-desc-'+i).value;p.tech=document.getElementById('pj-tech-'+i).value.split(',').map(function(t){return t.trim();}).filter(function(t){return t.length>0;});p.github=document.getElementById('pj-github-'+i).value;p.live=document.getElementById('pj-live-'+i).value;});}
+function addProj(){collectProj();DATA.projects.push({title:'New Project',description:'',tech:[],github:'#',live:'#'});renderProjList();}
+function delProj(i){if(!confirm('Delete this project?'))return;collectProj();DATA.projects.splice(i,1);renderProjList();}
+function moveProj(i,d){collectProj();var a=DATA.projects.splice(i,1)[0];DATA.projects.splice(i+d,0,a);renderProjList();}
+
 function renderEduList(){
   var c=document.getElementById('edu-list');c.innerHTML='';
   DATA.education.forEach(function(e,i){
@@ -432,7 +423,6 @@ function addEdu(){collectEdu();DATA.education.push({degree:'',school:'',location
 function delEdu(i){if(!confirm('Delete this entry?'))return;collectEdu();DATA.education.splice(i,1);renderEduList();}
 function moveEdu(i,d){collectEdu();var a=DATA.education.splice(i,1)[0];DATA.education.splice(i+d,0,a);renderEduList();}
 
-// ── CERTIFICATIONS ──
 function renderCertList(){
   var c=document.getElementById('cert-list');c.innerHTML='';
   DATA.certifications.forEach(function(ct,i){
@@ -451,7 +441,6 @@ function addCert(){collectCerts();DATA.certifications.push({name:'',org:'',date:
 function delCert(i){if(!confirm('Delete?'))return;collectCerts();DATA.certifications.splice(i,1);renderCertList();}
 function moveCert(i,d){collectCerts();var a=DATA.certifications.splice(i,1)[0];DATA.certifications.splice(i+d,0,a);renderCertList();}
 
-// ── VOLUNTEERING ──
 function renderVolList(){
   var c=document.getElementById('vol-list');c.innerHTML='';
   DATA.volunteering.forEach(function(v,i){
@@ -469,7 +458,6 @@ function addVol(){collectVol();DATA.volunteering.push({title:'',location:'',peri
 function delVol(i){if(!confirm('Delete?'))return;collectVol();DATA.volunteering.splice(i,1);renderVolList();}
 function moveVol(i,d){collectVol();var a=DATA.volunteering.splice(i,1)[0];DATA.volunteering.splice(i+d,0,a);renderVolList();}
 
-// ── LANGUAGES ──
 function renderLangList(){
   var c=document.getElementById('lang-list');c.innerHTML='';
   DATA.languages.forEach(function(l,i){
@@ -486,12 +474,12 @@ function addLang(){collectLang();DATA.languages.push({name:'',level:''});renderL
 function delLang(i){if(!confirm('Delete?'))return;collectLang();DATA.languages.splice(i,1);renderLangList();}
 function moveLang(i,d){collectLang();var a=DATA.languages.splice(i,1)[0];DATA.languages.splice(i+d,0,a);renderLangList();}
 
-// ── SAVE ALL ──
 function saveAll(){
   try{
     collectBasics();
     collectExp();
     collectSkills();
+    collectProj();
     collectEdu();
     collectCerts();
     collectVol();
@@ -501,7 +489,6 @@ function saveAll(){
   }catch(ex){toast('Error saving: '+ex.message,true);}
 }
 
-// ── RESET ──
 function confirmReset(){
   if(confirm('Reset ALL data to defaults? This cannot be undone.')){
     localStorage.removeItem('portfolio_data');
@@ -511,10 +498,8 @@ function confirmReset(){
   }
 }
 
-// ── ESCAPE ──
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 
-// Auto-init if already logged in
 if(sessionStorage.getItem('admin_auth')==='1'){initAdmin();}
 </script>
 </body>
